@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-07-12T11:50:30.911Z</updated>
+  <updated>2020-07-12T11:24:57.128Z</updated>
   <id>/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2020/07/12/hello-world/"/>
-    <id>/2020/07/12/hello-world/</id>
-    <published>2020-07-12T11:50:30.911Z</published>
-    <updated>2020-07-12T11:50:30.911Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>蛋白排行</title>
