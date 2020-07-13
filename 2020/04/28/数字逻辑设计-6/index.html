@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">数字逻辑设计(6) | 智未开的博客</title>
+  
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/ico/favicon.png">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "智未开zhiwk";
+  mashiro_option.author_name = "zhiwk";
+  mashiro_option.site_url = "/";
+  mashiro_option.v_appId = "iDWioOj8lC42XpLWeFGYr69r-gzGzoHsz";
+  mashiro_option.v_appKey = "LuP41wnq4QEQEsJjj4T2qTlq";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/1.jpg,https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/2.jpg,https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/3.jpg,https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/4.jpg,https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/5.jpg,https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/6.jpg,https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/7.jpg,https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/8.jpg,https://w.wallhaven.cc/full/ym/wallhaven-ymo837.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="/">
+          <img src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/ico/head.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>你在凝视深渊的时候，深渊也在凝视你</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/ico/qq.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/qrcode/qq.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">智未开</span>
+            <span class="shironeko">zhiwk</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://drivers.mydrivers.com/img/20141024/2cefe198ae6446659caf912603152240.jpg);" src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/orange.progress-bar-stripe-loader.svg" data-src="http://drivers.mydrivers.com/img/20141024/2cefe198ae6446659caf912603152240.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      数字逻辑设计(6)</h1>
+      <p class="entry-census">
+        <span>
+          <a href="/">
+            <img src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/ico/head.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="/">zhiwk</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-4-28<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="时序逻辑电路"><a href="#时序逻辑电路" class="headerlink" title="时序逻辑电路"></a>时序逻辑电路</h1><p>&emsp;&emsp;本章要求掌握：</p>
+<p>&emsp;&emsp;&emsp;&emsp;1.组合逻辑电路和时序逻辑电路的区别</p>
+<p>&emsp;&emsp;&emsp;&emsp;2.同步时序电路和异步时序电路的区别</p>
+<p>&emsp;&emsp;&emsp;&emsp;3.时钟同步状态机的模型图，米立型时序电路和摩尔型时序电路的区别</p>
+<p>&emsp;&emsp;&emsp;&emsp;4.有限状态机、输出方程、激励方程、状态方程的概念；用状态图和状态表描述状态机的状态转换关系，状态图和状态表的相互转换</p>
+<p>&emsp;&emsp;&emsp;&emsp;5.时钟同步状态机的基本分析方法和步骤；使用状态图表示状态机的状态转换关系</p>
+<p>&emsp;&emsp;&emsp;&emsp;6.时钟同步状态机的设计：状态转换过程的建立，状态的化简和编码赋值、未用状态的处理————风险最小方案和成本最小方案，使用状态转换表的设计方法，使用状态图的设计方法</p>
+<p>&emsp;&emsp;&emsp;&emsp;7.学习利用基本的逻辑门、时序元件作为设计的基本元素完成规定的时钟同步状态机电路（比如计数器、移位寄存器、序列检测电路和序列发生器等）的设计</p>
+<p>&emsp;&emsp;&emsp;&emsp;8.学习利用基本的逻辑门和已有的中规模集成电路（MSI）时序功能器件作为设计的基本元素完成更为复杂的时序逻辑电路设计的方法</p>
+<h2 id="时钟同步时序电路概述"><a href="#时钟同步时序电路概述" class="headerlink" title="时钟同步时序电路概述"></a>时钟同步时序电路概述</h2><p>&emsp;&emsp;时序逻辑电路的特点是：在任何时刻电路的输出不仅与电路该时刻的输入有关，还与该电路过去的输入有关</p>
+<p>&emsp;&emsp;过去的输入决定了现在所处的位置，在时序逻辑电路中，我们把现在所处的这个位置称为“状态”</p>
+<p>&emsp;&emsp;时序逻辑电路的状态可以是个很大的数，但绝不可能是无限的，所以有时也将时序逻辑电路称为有限状态机，简称状态机</p>
+<p>&emsp;&emsp;时序逻辑电路按其工作方式，可分为同步时序逻辑电路和异步时序逻辑电路。</p>
+<p>&emsp;&emsp;同步时序逻辑电路（又称为同步时序电路）中所有的存储单元都采用由同一时钟控制的触发器，因此其状态的变化都会在统一的时钟边沿发生</p>
+<p>&emsp;&emsp;异步时序逻辑电路（又称为异步时序电路）的存储电路由触发器或延时元件组成，电路中没有统一的时钟信号同步，输入信号的变化将直接导致输出状态的改变</p>
+<h3 id="同步时序电路的结构"><a href="#同步时序电路的结构" class="headerlink" title="同步时序电路的结构"></a>同步时序电路的结构</h3><p>&emsp;&emsp;同步时序电路又称为时钟同步状态机，“时钟”是指电路中的存储元件（触发器）采用了一个时钟输入，而“同步”意味着电路中的所有触发器都使用同一个时钟信号，电路只有在时钟信号的触发边沿出现的时候才能改变状态</p>
+<p>&emsp;&emsp;<strong>输入变量</strong>：源于时序电路外部的所有变量皆被认为是输入变量</p>
+<p>&emsp;&emsp;<strong>时钟信号</strong>：时钟信号对电路状态的变化起到同步的作用，它决定了状态变换的时刻。在研究同步时序电路时，通常不把时钟信号作为输入信号处理，而将它当做一个默认的时间基准</p>
+<p>&emsp;&emsp;<strong>输出变量</strong>：离开时序电路的所有变量皆被认为是输出变量</p>
+<p>&emsp;&emsp;<strong>状态变量</strong>：状态变量就是用做状态存储器的所有触发器的输出</p>
+<p>&emsp;&emsp;<strong>激励变量</strong>：激励变量是指存储元件（触发器）的输入。当触发器被用做系统的存储元件时，激励变量就是触发器的输入（比如$J、K，R、S，D或T$）</p>
+<p>&emsp;&emsp;<strong>状态</strong>：同步时序电路的状态是由各个触发器的输出$Q$共同定义的。时序电路的每一个状态都必须唯一确定。状态变量和状态的关系为$2^x=y$。在这里，$x=$状态变量数（如触发器数），$y=$可能的最大状态数（如4个状态变量最多可以表示16中状态）。时序电路中的任何一个状态都是状态变量的唯一组合；每一个状态必须区别于所有其他状态</p>
+<p>&emsp;&emsp;激励输入的函数关系式可写为：$E=F(S,I)$，表示存储元件的输入$(E)$与输入变量$(I)$与状态变量$(S)$之间的逻辑关系，称为激励函数表达式</p>
+<p>&emsp;&emsp;输出$O$是由输入变量$(I)$和状态变量$(S)$进行组合逻辑$(G)$变换而产生的，其关系表达式为：输出$O=G(S,I)$，称为输出函数表达式</p>
+<h3 id="米立机和摩尔机"><a href="#米立机和摩尔机" class="headerlink" title="米立机和摩尔机"></a>米立机和摩尔机</h3><p>&emsp;&emsp;按照输出产生方式的不同，同步时序电路又可分为米立(MEALY)型和摩尔(MOORE)型</p>
+<p>&emsp;&emsp;如果同步时序电路的输出时输入和现态的函数，即输出$O=G(S,I)$，则称该电路为米立型电路。也就是说，米立型状态机的输出和输入有直接的关系，输入的变化会引起输出的改变</p>
+<p>&emsp;&emsp;而在有些时序电路中，输出只由状态来决定，即输出$O=G(S)$，这样的时序电路称为摩尔型</p>
+<h3 id="同步时序电路的描述"><a href="#同步时序电路的描述" class="headerlink" title="同步时序电路的描述"></a>同步时序电路的描述</h3><h4 id="现态和次态"><a href="#现态和次态" class="headerlink" title="现态和次态"></a>现态和次态</h4><p>&emsp;&emsp;通常将时钟触发沿到来之前的电路状态称为现态，记为$S$</p>
+<p>&emsp;&emsp;通常将时钟触发沿到来之后的电路状态称为次态，记为$S^{n+1}$（或$S^*$）</p>
+<p>&emsp;&emsp;在这里，时钟信号起到同步的作用</p>
+<h4 id="状态表"><a href="#状态表" class="headerlink" title="状态表"></a>状态表</h4><p>&emsp;&emsp;状态表又称为状态转换表，描述了在所有输入组合条件下，现在状态和触发沿之后新的状态（次态）之间的关系，其目的在于描述状态的转移</p>
+<h4 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h4><p>&emsp;&emsp;状态图是状态表的图形化表示。在状态图中，每一个状态用一个圆圈表示，圈内用字母或数字表示状态名称，用带箭头的线表示状态的转移关系，并把引起这一转移的输入条件和相应的输出标注在有向线段的旁边。</p>
+<h4 id="转换表"><a href="#转换表" class="headerlink" title="转换表"></a>转换表</h4><p>&emsp;&emsp;状态图和状态表都使用符号和名字来表示状态，而转换表则要求将特定的状态变量值分配给每一状态。分配状态变量值给状态称为状态分配。状态分配将抽象的状态符号和实际的状态变量二进制编码联系起来。</p>
+<h2 id="基于触发器的时钟同步时序电路的分析"><a href="#基于触发器的时钟同步时序电路的分析" class="headerlink" title="基于触发器的时钟同步时序电路的分析"></a>基于触发器的时钟同步时序电路的分析</h2><p>&emsp;&emsp;同步时序电路的分析一般是从逻辑图开始，其目标是最终构造一个状态表或状态图，进而推断该时序电路的功能</p>
+<p>&emsp;&emsp;基于触发器的同步时序电路的分析步骤一般为：</p>
+<p>&emsp;&emsp;&emsp;&emsp;1.确定系统中的输入变量、状态变量和输出变量。如果变量在逻辑图里不明确，就给他们分配名字</p>
+<p>&emsp;&emsp;&emsp;&emsp;2.确定触发器类型。写出时序电路中所用触发器的特征方程（时序电路可能使用不止一种类型的触发器，因此一个电路可能需要几个不同的特征方程）</p>
+<p>&emsp;&emsp;&emsp;&emsp;3.由逻辑电路图写出输出方程和激励方程（均为组合电路方程）</p>
+<p>&emsp;&emsp;&emsp;&emsp;4.利用触发器特征方程和电路激励方程为每个状态变量写出次态函数表达式</p>
+<p>&emsp;&emsp;&emsp;&emsp;5.写出输出变量函数，确定该电路是米利机还是摩尔机（这在构造状态表和状态图时有用）</p>
+<p>&emsp;&emsp;&emsp;&emsp;6.根据次态方程式和输出方程表达式构造状态表和输出表（以当前状态和输入为变量），对给定的状态变量数标识所有可能的状态</p>
+<p>&emsp;&emsp;&emsp;&emsp;7.为状态分配名字，并构造状态表或状态图</p>
+<p>&emsp;&emsp;&emsp;&emsp;8.如果可能的话，构造时序图</p>
+<h2 id="基于触发器的时钟同步时序电路的设计"><a href="#基于触发器的时钟同步时序电路的设计" class="headerlink" title="基于触发器的时钟同步时序电路的设计"></a>基于触发器的时钟同步时序电路的设计</h2><p>&emsp;&emsp;同步时序电路的设计过程和分析正好相反，一般是由对电路功能的文字描述开始，构造一个状态表、状态图，最终目标是得到能够实现所要求功能的逻辑电路图。设计一般可分为任务分析和逻辑综合两大步骤，任务分析的目的是建立状态转换图/表；逻辑综合的工作是建立简化的输出方程和激励方程，并画出逻辑电路图。</p>
+<p>&emsp;&emsp;具体而言，任务分析就是把要求实现的时序逻辑功能，用状态表或者状态图的形式表示。其具体步骤为：</p>
+<p>&emsp;&emsp;&emsp;&emsp;1.由逻辑问题的文字描述，确定输入/输出端的数量，命名并赋值</p>
+<p>&emsp;&emsp;&emsp;&emsp;2.确定状态的数量和每个状态的含义，并对状态分别命名</p>
+<p>&emsp;&emsp;&emsp;&emsp;3.按照任务要求，逐步构造状态转换表（或状态转换图）</p>
+<p>&emsp;&emsp;&emsp;&emsp;4.对状态进行分析，合并等价状态，是状态数目最小化。若两个状态在相同的输入下有相同的输出，并且转换到同样的下一状态，则称这两个状态时等价的。等价状态时重复的，可以合并。电路的状态数越少，设计出来的电路就越简单</p>
+<p>&emsp;&emsp;&emsp;&emsp;5.得到简化的状态转换表（或状态转换图）</p>
+<p>&emsp;&emsp;逻辑综合的步骤为：</p>
+<p>&emsp;&emsp;&emsp;&emsp;1.进行状态分配。时序电路的状态是由触发器输出状态的不同组合表示的，状态分配就是给电路中的每个状态规定对应的触发器状态组合，每组触发器的状态组合都是一个二进制代码，因此这一过程又称为状态编码。在状态分配时，首先要确定触发器的数目$k$。因为k个触发器共有$2^k$个状态组合，所以若电路的状态数为M，则需要$M\leq 2^k$。若$M\leq 2^k$，从$2^k$个编码中取M个作为状态编码，会有多种不同的方案，如果编码方案选择得当，设计结果就会很简单，反之，设计出的电路就会复杂很多。而对于没有使用的状态编码（一般可称为未用状态），根据是否预先指定其下一状态，有两种处理方式：成本最小和代价最小</p>
+<p>&emsp;&emsp;&emsp;&emsp;2.由选定的状态编码和前面得到的状态转移表，建立转移/输出表</p>
+<p>&emsp;&emsp;&emsp;&emsp;3.选择触发器种类，由转移表得到激励表，由输出表简化得到输出方程</p>
+<p>&emsp;&emsp;&emsp;&emsp;4.由激励表化简得到激励方程</p>
+<p>&emsp;&emsp;&emsp;&emsp;5.根据得到的方程式，画出逻辑电路图</p>
+<p>&emsp;&emsp;&emsp;&emsp;6.对按成本最小方式得到的电路，需检查设计的电路能否启动。如果电路不能自启动，则需要采用措施加以解决。一种方法是在电路开始工作时通过预置值将电路的状态预置成有效状态中的某一个；另一种方法是通过修改逻辑设计加以解决。</p>
+<h2 id="常见的中规模时序逻辑电路及其应用"><a href="#常见的中规模时序逻辑电路及其应用" class="headerlink" title="常见的中规模时序逻辑电路及其应用"></a>常见的中规模时序逻辑电路及其应用</h2><h3 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h3><h3 id="集成计数器的应用"><a href="#集成计数器的应用" class="headerlink" title="集成计数器的应用"></a>集成计数器的应用</h3><h3 id="移位寄存器"><a href="#移位寄存器" class="headerlink" title="移位寄存器"></a>移位寄存器</h3><h3 id="移位寄存器的应用"><a href="#移位寄存器的应用" class="headerlink" title="移位寄存器的应用"></a>移位寄存器的应用</h3>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/qrcode/AliPay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/qrcode/WeChatPay.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/05/12/数字逻辑设计-7/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/orange.progress-bar-stripe-loader.svg" data-src="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/04/ChMkJ1bKyEyIMaKUAAhskHwWGqUAALIAAM2KsIACGyo249.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/04/ChMkJ1bKyEyIMaKUAAhskHwWGqUAALIAAM2KsIACGyo249.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                数字逻辑设计(7)</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/04/22/数字逻辑设计-5/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/bk/orange.progress-bar-stripe-loader.svg" data-src="http://drivers.mydrivers.com/img/20141024/1a695104d75941a0900689bcad126716.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://drivers.mydrivers.com/img/20141024/1a695104d75941a0900689bcad126716.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                数字逻辑设计(5)</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "iDWioOj8lC42XpLWeFGYr69r-gzGzoHsz",
+        appKey: "LuP41wnq4QEQEsJjj4T2qTlq",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/ico/head.jpg" itemprop="image" alt="zhiwk" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="/" itemprop="url" rel="author">zhiwk</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 zhiwk<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/zhiwk/ImgHosting@1.1/img/ico/head.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">智未开zhiwk</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=3438019133&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="2660651585"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>
