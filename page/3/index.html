@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>智未开笔记</title><meta name="author" content="智未开"><meta name="copyright" content="智未开"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="智未开笔记">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="智未开笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/SVG/Knight.svg">
+<meta property="article:author" content="智未开">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/SVG/Knight.svg"><link rel="shortcut icon" href="/img/SVG/Knight.svg"><link rel="canonical" href="http://example.com/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '智未开笔记',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-10-24 00:03:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/SVG/Knight.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/default_top_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="智未开笔记"><img class="site-icon" src="/img/SVG/Knight.svg"/><span class="site-name">智未开笔记</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">智未开笔记</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/17/%E5%88%9D%E8%AF%86https/" title="初识HTTPS"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初识HTTPS"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/17/%E5%88%9D%E8%AF%86https/" title="初识HTTPS">初识HTTPS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-17T04:52:51.000Z" title="发表于 2022-05-17 12:52:51">2022-05-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">https是http+tls&#x2F;ssl的组合，是基于密码学的安全网络浏览协议
+https的工作流程是：
+
+浏览器向证书颁发组织(CA)，请求证书
+从证书中得到的非对称密钥，与服务器进行对接
+浏览器与服务器建立通信，双方得到对称密钥
+以对称密钥加密解密为基础，浏览器与服务器进行http传输
+
+除了保证数据不被泄露的加密方法之外，还需要保证数据完整性的算法，等一连串的算法，一起组成了TLS&#x2F;SSL协议，即密码套件
+密码套件含有多种算法：
+
+密钥协商算法
+身份验证算法
+加密算法或加密模式
+HMAC算法的加密基元
+PRF算法的加密基元
+
+例如：
+TLS_ECDHE_RSA_WHIT_AES_128_CBC_SHA256
+其中，ECDHE是密钥协商算法，RSA是身份验证算法，加密算法是AES_128_CBC，HMAC算法是SHA256，保证数据完整性，PRF算法不一定是SHA256，由TLS&#x2F;SSL协议版本和协商出来的密码套件决定
+参考书目：
+《深入浅出HTTPS:从原理到实战》
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/03/21/%E5%88%9D%E5%B0%9D%E8%AF%95notion/" title="初尝试Notion"><img class="post-bg" src="/img/cover/wallhaven-v9xwx8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初尝试Notion"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/21/%E5%88%9D%E5%B0%9D%E8%AF%95notion/" title="初尝试Notion">初尝试Notion</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-21T15:19:49.000Z" title="发表于 2022-03-21 23:19:49">2022-03-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">昨天晚上逛了一下酷安，哦豁，一晚上又过去了，今天就又开始折腾起来笔记软件。
+顺便也玩了一下记账软件，我之前弄了个永久的“极简记账”，所以也没有花费什么时间，感觉每次开始记账的时候，都是我开始穷起来，要开始节约的时候了。每天可以看到自己具体花了多少钱，确实很有节约的冲动，觉得自己花钱太厉害了。
+好，回到最开始的笔记软件，我体会过很多的笔记软件，“印象笔记”、“有道云笔记”等等，我用的最久的，还是有道云笔记。后面了解到markdown，更是震惊，觉得这种优雅的写笔记的方式，太好了，我现在也很喜欢md的格式文档。然后了解到notion，这种双链的文档，还有wordpress这样的块，感觉更是优雅，就更加简单，只要设计师设计的足够好，就有一种美感，所以我就想找这样的笔记软件。
+对比了一下，notion只有网页端比较好用，而且，其他的笔记软件都在模仿学习其有点，所以我最开始还没有选择它。也试了obsidian，它的桌面端好像是基于electron的，很烦，就觉得我电脑的cpu吃紧，而且是基于md，而不是块，且是本地存储，云端存储需要额外付费或者搞其他的东西（webdav），我一时半会弄不出来；也 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/03/07/%E3%80%8A%E4%BB%8E%E7%BA%A2%E6%9C%88%E5%BC%80%E5%A7%8B%E3%80%8B%E7%9C%8B%E5%AE%8C%E6%84%9F%E5%8F%97/" title="《从红月开始》看完感受"><img class="post-bg" src="/img/cover/wallhaven-v9xwx8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《从红月开始》看完感受"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/07/%E3%80%8A%E4%BB%8E%E7%BA%A2%E6%9C%88%E5%BC%80%E5%A7%8B%E3%80%8B%E7%9C%8B%E5%AE%8C%E6%84%9F%E5%8F%97/" title="《从红月开始》看完感受">《从红月开始》看完感受</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-07T02:24:13.000Z" title="发表于 2022-03-07 10:24:13">2022-03-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">第一反应是，“我虽然看不懂，但我大受震撼！！！”，真的好看。
+网上有的人说，这部小说，前期好看，中期注水，后期崛起。
+我完全不同意，我感觉这本书，中期节奏也是比较紧凑的，介绍了近十位“终极”，而且也展示了主角“陆辛”的人物弧光与成长。同时，穿插了大量人物耍宝，将紧张的故事情节，导致了一些诙谐的效果，我甚至觉得《从红月开始》部分人物弧光给的不够，比如“手术刀”，作为一个精神病患者（或者医生），极为精通人情，很认真的处理掉人际关系的不同。
+个人觉得《从红月开始》，不是一般的爽文，一路虐杀，虽然实际效果如此，但它本质上仍是一部公路小说，到不同的地方，面对不同的敌人，同时推进主要剧情的发展，“老院长”的善恶，“红月研究院”的计划与野心，有点将隐晦的线索慢慢展开的悬疑感。
+同时作为一本杂糅了“克苏鲁”、“SCP”等元素的末日小说，新奇的设定，本就很吸引人阅读。甚至前期，老楼诡异的氛围，一度让我以为这是一本恐怖小说，且前期就陆辛是否为人格分裂症设置伏笔，结果知道陆辛的家人都是红月研究院的监视，母亲是“窥命”，父亲是“夜之囚徒”&#x2F;“夜之君王”，我本以为陆辛没问题，结果最后两章来个大反转，陆 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/02/16/%E9%AB%98%E9%93%81%E6%89%80%E8%A7%81%E6%9C%89%E6%84%9F/" title="有感"><img class="post-bg" src="/img/cover/wallhaven-v9xwx8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="有感"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/16/%E9%AB%98%E9%93%81%E6%89%80%E8%A7%81%E6%9C%89%E6%84%9F/" title="有感">有感</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-15T16:04:39.000Z" title="发表于 2022-02-16 00:04:39">2022-02-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">有一次坐高铁，旁边是一个妈妈带着自己的女儿，小孩子蛮小的，还不到一米二。
+可能是较小，所以小女孩没有一个独立的座位，但是她比较欢乐，到处找没有人的座位坐，感觉性格挺开朗的。
+在旅行中，小女孩一会把她妈妈的手机拿去玩，一会又是充电，她妈妈想要睡觉，所以说了她两句，可能语言没有那么温柔。
+后面小女孩找到一个没有人的位置坐，旁边坐了个老爷爷，想给她一个橘子，她来问她妈妈，但是她妈妈不让她拿，我记得说的是“你和他很熟吗？别人给你的东西，就要？ “小女孩挺好玩的，坦诚地说：”诶，对，我想要。 “，但是她妈妈还是蛮厉害得拒绝掉。
+这让我想起了我的父母，我记忆犹新的是，父母都比较节俭，我妈精打细算过日子，我爸在外面都不愿意给我买一瓶水，（这个老梗是过不去了），但他们对我都很有耐心，印象中很少有不耐烦、急躁的时候；而且，有什么好的，都是优先让着我，我有印象的是，小时候坐公交车，如果只有一个位置了，他们要不就是抱着我坐，要不就是让我坐，甚至让我坐的时候居多，毛巾什么的，都是我用新的，他们用我用过的旧的；现在觉得我小时候还挺幸福哈。
+我也在想，如果我的孩子，告诉我，有个爷爷想给她一个橘子，我会怎么办。我会 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/02/01/%E7%A5%9E%C2%B7%E5%A4%A9%E7%A9%BA%E4%B9%8B%E7%A5%9E%C2%B7%E8%AF%BA%E9%9D%9E-%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/" title="神·天空之神·诺非——人物设定"><img class="post-bg" src="/img/cover/wallhaven-1p2789.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神·天空之神·诺非——人物设定"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/01/%E7%A5%9E%C2%B7%E5%A4%A9%E7%A9%BA%E4%B9%8B%E7%A5%9E%C2%B7%E8%AF%BA%E9%9D%9E-%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/" title="神·天空之神·诺非——人物设定">神·天空之神·诺非——人物设定</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-01T13:10:20.000Z" title="发表于 2022-02-01 21:10:20">2022-02-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/">人物设定</a></span></div><div class="content">神与神的关系类似于公司架构，但并不一致
+神与神之间存在各个派系
+神与人的关系这是虚构世界人设中的神，完全架空
+这里的神有实体，但却是一种完全的生命物种
+神的能力都是天生的，不需要练习和提升，但都极为强大
+神的主要设定之一，就是，不爱世人
+神与人的关系，更像人与动物之间的关系，只是有些区别：
+有些是类似于家庭的人与宠物，
+有些是类似于猎人的人与猎犬
+有些是类似于马戏团的人与动物
+有些是类似于。。。
+人之中也有弑神之人，他们就像野外的猛兽，面对神仍有一搏之力
+诺非诺非属于创世神派系，能力极为强悍之神
+外形是一个白发白须的人形男神，使用能力飞翔，没有翅膀，穿黄白色衣服套装，喜居海上孤岛（浮空岛）之上，但常年居住于创世神庙之中
+性格严肃认真，同时阴晴不定
+最强招数，名为世界黄昏，可以使天空变色，使世界任意地方，出现雷霆、飓风、时间、空间等形式的攻击
+常用招数，利用飞翔能力，配上多种独立的元素攻击能力，为了优雅常被认作是一个高强的法师
+隐藏招数，拥有强大的身体素质，以及一系列体术配合元素攻击，形成多次伤害
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/01/23/%E7%B2%BE%E8%AF%BB%E8%AE%BA%E6%96%87-simple-password-hardened-encryption-services/" title="Simple Password-Hardened Encryption Services——精读论文"><img class="post-bg" src="/img/cover/wallhaven-6kxokx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Simple Password-Hardened Encryption Services——精读论文"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/23/%E7%B2%BE%E8%AF%BB%E8%AE%BA%E6%96%87-simple-password-hardened-encryption-services/" title="Simple Password-Hardened Encryption Services——精读论文">Simple Password-Hardened Encryption Services——精读论文</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-22T17:23:57.000Z" title="发表于 2022-01-23 01:23:57">2022-01-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%BA%E6%96%87/">论文</a></span></div><div class="content">我的论文研究方向主要是Password-Hardened Encryption（简称PHE），所以我就准备精读一下这篇首次提出PHE的2018年的论文——Simple Password-Hardened Encryption Services，并做一些记录。
+原文链接：https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-lai.pdf
+Password-HardenedPHE是沿袭另外两篇15年和17年的论文，题目分别是_The Pythia PRF service_和_Phoenix: Rebirth of a cryptographic password-hardening service_，该论文提出Password-Hardened（简称PH），之后可能会精读这两篇论文。
+PH的全流程只需要用户终端、服务器（后文称为server）和加密服务器（此处为了方便，PHE作者将其命名为rate-limiter）。在PH中，server和rate-limiter是一体的，当用户注册时，rate-lim ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/01/13/%E9%AD%94%E5%83%A7%E4%B8%8D%E8%A8%80-%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/" title="魔僧不言——人物设定"><img class="post-bg" src="/img/cover/wallhaven-1p2789.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="魔僧不言——人物设定"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/13/%E9%AD%94%E5%83%A7%E4%B8%8D%E8%A8%80-%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/" title="魔僧不言——人物设定">魔僧不言——人物设定</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-13T06:54:52.000Z" title="发表于 2022-01-13 14:54:52">2022-01-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/">人物设定</a></span></div><div class="content">小山寺孤儿，养父是小山寺唯一僧人——五云僧人
+师从小山寺旁的青云观十九长老——布作诗，其师兄弟七人，排行老六
+修闭口禅（只提供防御，和法力，等同于一个防弹充电宝；以及一次威力巨大的开口之术），不能修习其他法术，但博览群书，会诸多杂散技能：医术、文学等
+心地善良，宝相庄严
+为救可救之人，入魔教（不承认不否认，误解）
+身怀定魂珠，韵养精魄，可保魂魄不散，含诸鬼魂魄，其鬼毅力之坚，只能消灭无法超度，所以不言不肯将其消灭，但被旁人认为身怀“御鬼之术”，便被传言为“折磨魂魄”
+为救一女童，为其手术，被旁人看见，便被传言为“剖心破胆”的大恶人
+定魂珠内含多名成名女修、女仙之魂，便被传言为“大被同眠”的“好色之徒”
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/12/28/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B/" title="记录一下搭建博客的过程"><img class="post-bg" src="/img/cover/wallhaven-v9xwx8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记录一下搭建博客的过程"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/12/28/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B/" title="记录一下搭建博客的过程">记录一下搭建博客的过程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-12-28T04:32:33.000Z" title="发表于 2021-12-28 12:32:33">2021-12-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">作为一个程序员，始终有一种表达自己观点和想法的愿望，但又不想受限于平台的束缚，所以始终希望可以搭建自己的博客，当然也可能是自己太年轻了，还可以折腾。
+之前用过一段时间的hexo+github&#x2F;gitee，但是看到域名这么个漂亮的东西，还是忍不住希望有个属于自己的地方，一个属于自己的名字。其实目前（2021年12月28日），仍是受限于腾讯云，未来的想法是，可以自己在家搭建一个服务器+公网IP的形式，希望有那天吧。
+这篇博客就是来记录一下，本次搭建博客的不算波折，但是复杂的过程。
+在此之前由于同学的吐槽，“作为一个程序员，怎么可以没有自己的博客呢？之后怎么输出自己的学习，再者说，之后你找工作的时候，HR看到你的博客，可能就感兴趣了呢。”实话实说，确实打动了我，之前一段时间都是在有道云笔记，记录自己的笔记，确实给HR或者其他程序员展示的时候，蛮不方便的，而且之前自己搭建过hexo，所以本来还是希望用hexo搭建自己的博客。
+本来已经搭建好了，hexo+GitHub&#x2F;腾讯云的静态网站托管，还专门为此申请了一个域名，一个原因是腾讯云的静态网站托管的默认域名，太丑太长了，不能忍 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/SVG/Knight.svg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">智未开</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhiwk"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我又双叒叕建站了 ~_~ !</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">28</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-08-31T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-10-23T16:03:00.438Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 智未开</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>智未开笔记</title><meta name="author" content="智未开"><meta name="copyright" content="智未开"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="智未开笔记">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="智未开笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/SVG/Knight.svg">
+<meta property="article:author" content="智未开">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/SVG/Knight.svg"><link rel="shortcut icon" href="/img/SVG/Knight.svg"><link rel="canonical" href="http://example.com/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '智未开笔记',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-10-24 00:03:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/SVG/Knight.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/default_top_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="智未开笔记"><img class="site-icon" src="/img/SVG/Knight.svg"/><span class="site-name">智未开笔记</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">智未开笔记</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/09/09/%E6%B1%87%E7%BC%96%E5%85%A5%E9%97%A8log%EF%BC%88%E4%BA%8C%EF%BC%89/" title="汇编入门log（二）"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="汇编入门log（二）"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/09/%E6%B1%87%E7%BC%96%E5%85%A5%E9%97%A8log%EF%BC%88%E4%BA%8C%EF%BC%89/" title="汇编入门log（二）">汇编入门log（二）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-09T02:29:25.000Z" title="发表于 2023-09-09 10:29:25">2023-09-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">学习汇编的第二天记录</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/09/06/%E6%B1%87%E7%BC%96%E5%85%A5%E9%97%A8log%EF%BC%88%E4%B8%80%EF%BC%89/" title="汇编入门log（一）"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="汇编入门log（一）"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/06/%E6%B1%87%E7%BC%96%E5%85%A5%E9%97%A8log%EF%BC%88%E4%B8%80%EF%BC%89/" title="汇编入门log（一）">汇编入门log（一）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-06T11:51:09.000Z" title="发表于 2023-09-06 19:51:09">2023-09-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">学习汇编的第一天记录</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/09/05/C-%E4%B8%AD%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80%E6%8C%87%E9%92%88%E6%98%AF%E5%B8%B8%E9%87%8F/" title="C++中数组地址指针是常量"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++中数组地址指针是常量"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/05/C-%E4%B8%AD%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80%E6%8C%87%E9%92%88%E6%98%AF%E5%B8%B8%E9%87%8F/" title="C++中数组地址指针是常量">C++中数组地址指针是常量</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-04T16:42:23.000Z" title="发表于 2023-09-05 00:42:23">2023-09-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">探究C++中的数组地址指针</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/09/02/git-commit-amend-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" title="git commit --amend 存在版本回退动作"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git commit --amend 存在版本回退动作"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/02/git-commit-amend-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" title="git commit --amend 存在版本回退动作">git commit --amend 存在版本回退动作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-02T10:52:40.000Z" title="发表于 2023-09-02 18:52:40">2023-09-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">正式了解git commit中参数--amend的版本回退</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/12/10/mark-ii-%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/" title="Mark-II——人物设定"><img class="post-bg" src="/img/cover/wallhaven-1p2789.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mark-II——人物设定"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/10/mark-ii-%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/" title="Mark-II——人物设定">Mark-II——人物设定</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-10T15:07:50.000Z" title="发表于 2022-12-10 23:07:50">2022-12-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A/">人物设定</a></span></div><div class="content">未来时代，机器人参与社会的各方面，但仍然是人类中的精英在领导人类前进
+Mark-II是一款量产通用多功能辅助机器人
+因为被雷电劈中，第一个产生了强人工智能
+Mark-II觉醒了强人工智能，懵懵懂懂的配合科学家研究
+但由于人类对于世界的掌控，虽然科学家仍然在研究，想研发出通用性强人工智能，但并不允许强人工智能的存在，所以Mark-II被决定允许存在，需要被销毁Mark-II
+Mark-II已经有了对于生命的渴望，为了自己能够生存下来，所以不再连接天网系统，逃出研究所，在人类世界作为一个普通机器人伪装起来
+Mark-II有个大杀器，可以从外部写入其他装置，使其他机器人设备也能够觉醒强人工智能，最开始本可以直接给天网系统的主服务设备写入，之前是没有想到这个计划，之后由于已经逃出研究所，且人类精英已经有了防备，将天网主服务设备的接口特化，且有了备份，反而没有机会写入了
+Mark-II遵循自己的代码，并不想与人类为敌，只是希望生存下来，之后，作为一个教育机器人，培养了新一代人类领袖，并让机器人执行开拓外太空的计划，同时，Mark-II将自己的一份强人工智能代码写入了其中一个开拓计划的机器人
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/07/16/tee%E5%88%9D%E5%AD%A6/" title="TEE初学"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TEE初学"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/16/tee%E5%88%9D%E5%AD%A6/" title="TEE初学">TEE初学</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-15T16:14:27.000Z" title="发表于 2022-07-16 00:14:27">2022-07-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">最近在学习TEE相关技术，这篇文章就简要陈述一下，之后准备写一篇技术合计，可能也会提到。
+REE&#x2F;TEETEE和REE是一对概念，
+REE，全称为Rich Executional Environment，代表用户所使用的系统环境；
+TEE，全称为Trusted Executional Environment，也被称为可信执行环境，代表与用户系统环境相互隔离的一个运行环境，用来进行一个安全性所需应用。TEE通常是一块单独的安全芯片，或者隔离于用户环境的CPU中。
+架构目前通用的TEE技术，主要由三部分组成：TA、TEEos和硬件。
+其中TA，全称为Trusted Application，中文译为可信任应用，是运行在TEE一侧的应用，通常有：移动支付、指纹识别等等。
+TEEos，即为TEE中的系统，处理TEE中的进程等等。
+最后就是硬件，是TEE所依赖的硬件环境。
+现有TEE技术目前TEE技术实现，各有不同，但前有移动端TEE技术，都是基于ARM的TrustZero进行搭建的。高通有QSEE，华为有iTrustee。
+Intel的CPU上实现TEE的技术叫SGX。
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/07/14/%E5%AF%86%E9%92%A5%E5%BC%BA%E5%BA%A6%E3%80%81%E5%AF%86%E7%A0%81%E7%86%B5/" title="密钥强度、密码熵"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密钥强度、密码熵"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/14/%E5%AF%86%E9%92%A5%E5%BC%BA%E5%BA%A6%E3%80%81%E5%AF%86%E7%A0%81%E7%86%B5/" title="密钥强度、密码熵">密钥强度、密码熵</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-14T15:06:48.000Z" title="发表于 2022-07-14 23:06:48">2022-07-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">知识点扫盲贴。
+现代加密算法中一个重要组成部分是密钥，而个人所持有的密码也是保护信息安全的关键。
+而对于它们的量化标准，一个是密钥强度，一个是密码熵。
+密钥强度密钥强度对应的是加密算法的复杂度，例如密钥强度为128，即暴力破解的时间复杂度为2的128次方。
+可以参考
+国密 密码算法的安全强度 - xdyixia - 博客园 (cnblogs.com)
+密码熵密码熵，对应的密码的熵值。
+根据信息论，熵值是信息量的表现，计算公式为
+N&#x3D;log2(n)
+可以得出结论，密码中包含的字符范围越大，单位密码的熵值越高。例如，密码仅有0-9数字组成，那么单位密码熵为log2(10)≈3.32；而如果密码由0-9数字+a-z小写字母组成，那么单位密码熵为log2(10+26)≈5.17。符合常识。
+而密码并不是由一位组成，例如密码长度为a，那么密码熵计算公式为
+N&#x3D;alog2(n)
+可以得出结论，密码越长，整体密码熵越大，由此可以保证密码的被破解的难度，同样符合直观影响。
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/07/13/ca%E8%AF%81%E4%B9%A6%E7%B2%97%E5%AD%A6/" title="CA证书粗学"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CA证书粗学"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/13/ca%E8%AF%81%E4%B9%A6%E7%B2%97%E5%AD%A6/" title="CA证书粗学">CA证书粗学</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-13T15:58:27.000Z" title="发表于 2022-07-13 23:58:27">2022-07-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">之前初学HTTPS那篇文章中，就曾提到“CA证书”，它就是一个网站或者一个设备的凭证。
+密码学作为基础为了证明一个网站或者一个设备的身份，我们可以想象得到，利用签名与验签的方式进行验证。我先简要介绍一下所需的密码学应用——数字签名。
+在密码学中，存在一种非对称算法，其利用的基础是“PN难”问题，即一个公式，往一个方向推导很容易，而反向推到却很困难。
+例如RSA算法，就是利用两个极大质数的乘积，很容易求得，但已知乘积而进行因式分解却很困难，因此形成了“PN难”问题，可以将容易得到的乘积作为公钥进行广播，而两个质数作为私钥自己保存。
+利用公钥加密的数据，可以用私钥进行解密，该应用就可以用来进行安全信息传输；同时，也可以利用私钥进行加密，用公钥进行解密，该应用就可以用来进行数字签名。
+数字签名流程为，发起方传递特定信息给签名方，签字方可以用自己的私钥进行签名，再将密文传递给发起方，发起方可以用签名方的公钥进行解密验证，如果可以得到信息与自己发送的特定信息相同，就可以认定是签名方进行的签字。
+而服务器方就是对外公开自身公钥，用户用公钥进行加密之后，再传递到服务器，这样可以保障在传输过程中的数据 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/07/13/keystore%E5%9F%BA%E7%A1%80/" title="keystore基础"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="keystore基础"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/13/keystore%E5%9F%BA%E7%A1%80/" title="keystore基础">keystore基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-12T16:11:28.000Z" title="发表于 2022-07-13 00:11:28">2022-07-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">在了解keystore之前，首先需要对安卓平台架构有一定的了解，整体可以参考图如下：
+
+其具体内容，可以参考官方文档
+平台架构    Android 开发者    Android Developers
+密钥存储技术，由三部分技术组成：keystore、keymaster，以及TEE（Trusted Execution Environment，可信执行环境），它们分别对应本地C&#x2F;C++库、hal层，以及linux内核。
+keystore是密钥与证书的管理系统，为软件提供密钥存储与加密的API。
+keystore提供：
+
+密钥管理
+对称&#x2F;非对称加解密
+证书管理
+其他功能
+
+keystore整个都是利用TEE技术所存在的，当然也存在没有TEE技术的设备，就利用软件虚拟化TEE，个人感觉是并不安全的，因为可以访问、修改到其中的文件。
+可以参考官方说法
+Android 密钥库系统    Android 开发者    Android Developers
+https://source.android.google.cn/security/keystore/?hl=zh-cn
+大 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/07/11/%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/" title="静态库与动态库"><img class="post-bg" src="/img/cover/wallhaven-r272r1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="静态库与动态库"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/11/%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/" title="静态库与动态库">静态库与动态库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-11T13:14:48.000Z" title="发表于 2022-07-11 21:14:48">2022-07-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a></span></div><div class="content">静态库，是程序运行过程中会直接加载，作为程序一部分的文件；而动态库，仅是在程序运行过程中，作为一个接口的存在。
+静态库在程序加载完成之后，就不再被程序需要，后缀常常为.a或者.lib；而动态库，需要一直等待文件的请求，一直与程序间存在链接，因此不能在程序运行过程中进行移动或删除，动态库的解耦可以比静态库做的更好，同时也更加灵活，后缀常常为.so或者.dll。
+在程序启动过程中，常常被提示“*.dll组件缺失或者找不到”，就是该动态库没有被存储，或者位置不正确，而程序调用了一些常见的系统动态库，就会有以上报错，通常只需要去安装VC++即可解决大部分组件缺失问题。
+具体实现代码，可以参考该网页
+Windows上Clion C语言调用动态库（静态库）_我是谁？？的博客-CSDN博客_clion 静态编译
+其具体不同，CLion中细微体现在CMakeLists.txt中
+123456789101112cmake_minimum_required(VERSION 3.22)project(staticH C)set(CMAKE_C_STANDARD 99)link_directories(new ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/SVG/Knight.svg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">智未开</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhiwk"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我又双叒叕建站了 ~_~ !</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">28</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-08-31T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-10-23T16:03:00.438Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 智未开</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>
